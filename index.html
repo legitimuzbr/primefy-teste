@@ -36,23 +36,37 @@
     <div id="legitimuz-root"></div>
     <script src="https://cdn.legitimuz.com/js/sdk/legitimuz-sdk.js"></script>
     <script lang="text/javascript">
-    const
-     legitimuz
-     =
-     Legitimuz
-    (
-    {
-    host: "https://api.legitimuz.com",
-    token: "95e69d09-9753-4ddf-b0e7-f56fa22a5383",
-    onSuccess: (eventName) => {  
-    console.log(eventName) // ocr | facematch
-    },
-    onError: (eventName) => {  
-    console.log(eventName) // ocr | facematch
-    }
-    });
+      const
+       legitimuz
+       =
+       Legitimuz
+      (
+      {
+      host: "https://api.legitimuz.com",
+      token: "95e69d09-9753-4ddf-b0e7-f56fa22a5383",
+      onSuccess: (eventName) => {  
+      console.log(eventName) // ocr | facematch
+      },
+      onError: (eventName) => {  
+      console.log(eventName) // ocr | facematch
+      }
+      });
 
-    legitimuz.mount();
+      legitimuz.changeFieldId({
+  fieldName: 'cpf',
+  fieldId: 'legitimuz-hydrate-cpf',
+ });
+
+      legitimuz.changeActionId({
+  actionName: 'verify',
+  actionId: 'legitimuz-validate-cpf',
+ });
+
+
+
+
+
+      legitimuz.mount();
     </script>
 
 
