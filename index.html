@@ -23,15 +23,14 @@
     </style>
   </head>
   <body>
+    
     <div class="corpo d-grid vw-100 vh-100 justify-content-center align-items-center">
       <div class="form text-center d-grid">
         <h1>Digite seu CPF abaixo:</h1>
-        <input type="number" class="form-control mt-3" id="legitimuz-hydrate-cpf">
+        <input type="number" class="form-control mt-3" id="legitimuz-hydrate-cpf" />
         <button type="button" class="btn mt-4 btn-outline-light" id="legitimuz-validate-cpf">Verificar</button>
       </div>
     </div>
-
-
 
     <div id="legitimuz-root"></div>
     <script src="https://cdn.legitimuz.com/js/sdk/legitimuz-sdk.js"></script>
@@ -39,25 +38,11 @@
       const legitimuz = Legitimuz({
         host: "https://api.legitimuz.com",
         token: "95e69d09-9753-4ddf-b0e7-f56fa22a5383",
-        onSuccess: (eventName) => {
-          console.log(eventName); // ocr | facematch
-        },
-        onError: (eventName) => {
-          console.log(eventName); // ocr | facematch
-        }
       });
-
-      legitimuz.changeFieldId({
-        fieldName: 'cpf',
-        fieldId: 'legitimuz-hydrate-cpf',
-       });
-
-            legitimuz.changeActionId({
-        actionName: 'verify',
-        actionId: 'legitimuz-validate-cpf',
-       });
 
     legitimuz.mount();
     </script>
+
+
   </body>
 </html>
